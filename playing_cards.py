@@ -1,3 +1,5 @@
+import card_game_main as game
+
 class Card:
     def __init__(self, card_id, display_name, type, rank, suit, location):
         self.card_id = card_id
@@ -11,4 +13,9 @@ class Card:
     def get_location(self):
         return self.location
     def use_card(self):
-        
+        self.location = game.discard
+    def move_card(self, destination):
+        self.location.remove_card(self)
+        self.location = destination
+        destination.add_card(self)
+    
