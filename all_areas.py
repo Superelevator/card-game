@@ -1,26 +1,67 @@
+from playing_cards import *
+
+# A general area class, capable of storing cards & serves as the location of the card
 class Area:
-    def __init__(self, area_id, cards):
+    def __init__(self, area_id, cards, capacity, slots=[], slot_capacities=[]):
+        # area id is the unique id of the area (formatted {type_id}_{player_id (if necessary else 0)}_{area_type})
         self.area_id = area_id
+
+        # list of cards stored in the area
         self.cards = cards
-    def add_card(self, card):
+
+        # capacity is the maximum number of cards that can be stored in the area
+        self.capacity = capacity
+
+        # slots is a list of slots in the area (formatted as slot type)
+        self.slots = slots
+
+        # slot_capacities is a list of the maximum number of cards that can be stored in each slot, float('inf') to remove limit
+        self.slot_capacities = slot_capacities
+
+        
+
+    def add_card(self, card: Card):
+        # adds a card to area (with consideration to slots)
+        if self.slots != []:
+            for slot_type in self.slots:
+                if card.card_class == slot_type:
+                    pass
         self.cards.append(card)
+
     def remove_card(self, card):
+        # removes a card from area
         self.cards.remove(card)
+
     def get_cards(self):
+        # returns all cards within the area
         return self.cards
+
     def get_card_count(self):
+        # returns number of cards in the area
         return len(self.cards)
+
     def get_card_by_id(self, card_id):
+        # returns card by id for consideration
         for card in self.cards:
             if card.card_id == card_id:
                 return card
         return None
 
+    def get_card_by_type(self, card_type):
+        # returns cards by type for consideration
+        for card in self.cards:
+            if card.card_type == card_type:
+                return card
+        return None
 
+
+# AREA SUBCLASS - Player's Hand
 class Hand(Area):
-    pass
+    def __init__(self, area_id, cards):
+        super().__init__(area_id, cards)
 
 
+# AREA SUBCLASS - Player's Equipment Zone
 class EquipmentZone(Area):
     def __init__(self, area_id, cards, weapon_slot, equipment_slot, terrain_slot, infrastructure_slot):
         super().__init__(area_id, cards)
