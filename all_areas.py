@@ -2,7 +2,7 @@ from playing_cards import *
 
 # A general area class, capable of storing cards & serves as the location of the card
 class Area:
-    def __init__(self, area_id, cards, capacity, slots=[], slot_capacities=[]):
+    def __init__(self, area_id, cards, capacity=float('inf'), slots=[], slot_capacities=[]):
         # area id is the unique id of the area (formatted {type_id}_{player_id (if necessary else 0)}_{area_type})
         self.area_id = area_id
 
@@ -20,17 +20,26 @@ class Area:
 
         
 
-    def add_card(self, card: Card):
+    def add_card(self, card: Card, slot_type=None):
         # adds a card to area (with consideration to slots)
-        if self.slots != []:
-            for slot_type in self.slots:
-                if card.card_class == slot_type:
-                    pass
+        if slot_type is not None:
+            if self.slot_available(slot_type):
+                self.slots[slot_type].append(card)
+                return
+            else:
+                raise ValueError(f"Slot {slot_type} is at capacity")
+        if self.capacity != float('inf') and len(self.cards) >= self.capacity:
+            raise ValueError("Area is at capacity")
         self.cards.append(card)
+        self.capacity += 1
 
-    def remove_card(self, card):
+    def remove_card(self, card, slot_type=None):
         # removes a card from area
+        if slot_type is not None:
+            self.slots[slot_type].remove(card)
+            return
         self.cards.remove(card)
+        self.capacity -= 1
 
     def get_cards(self):
         # returns all cards within the area
@@ -54,6 +63,16 @@ class Area:
                 return card
         return None
 
+    def slot_available(self, slot_type):
+        # checks if a slot is available for a given slot type
+        slot_id = self.slots.index(slot_type)
+        return len(self.slots[slot_id]) < self.slot_capacities[slot_id]
+
+    def check_card_slot(self, card):
+        # checks which slot a card is in
+        for slot in self.slots:
+            if card in slot:
+                return slot
 
 # AREA SUBCLASS - Player's Hand
 class Hand(Area):
@@ -65,36 +84,16 @@ class Hand(Area):
 class EquipmentZone(Area):
     def __init__(self, area_id, cards, weapon_slot, equipment_slot, terrain_slot, infrastructure_slot):
         super().__init__(area_id, cards)
-        self.weapon_slot = weapon_slot
-        self.equipment_slot = equipment_slot
-        self.terrain_slot = terrain_slot
-        self.infrastructure_slot = infrastructure_slot
-    def add_card(self, card):
-        if card.card_type == "weapon" and len(self.weapon_slot.cards) != 0:
-            self.weapon_slot.append(card)
-        elif card.card_type == "equipment" and len(self.equipment_slot.cards) != 0:
-            self.equipment_slot.append(card)
-        elif card.card_type == "terrain" and len(self.equipment_slot.cards) != 0:
-            self.terrain_slot.append(card)
-        elif card.card_type == "infrastructure" and len(self.infrastructure_slot.cards) != 0:
-            self.infrastructure_slot.append(card)
-        else:
-            raise ValueError("Card cannot be added to the equipment zone")
-    def remove_card(self, card):
-        if card.card_type == "weapon":
-            self.weapon_slot.remove(card)
-        elif card.card_type == "equipment":
-            self.equipment_slot.remove(card)
-        elif card.card_type == "terrain":
-            self.terrain_slot.remove(card)
-        elif card.card_type == "infrastructure":
-            self.infrastructure_slot.remove(card)
-        else:
-            raise ValueError("Card cannot be removed from the equipment zone")
+        self.slots = ["weapon", "equipment", "terrain", "infrastructure"]
+        self.slot_capacities = [1, 1, 1, 1]
+    
 
 
 class ReligionZone(Area):
-    pass
+    def __init__(self, area_id, cards, religion_slots):
+        super().__init__(area_id, cards)
+        self.slots = religion_slots
+        self.slot_capacities = [float('inf')] * len(religion_slots)
 
 
 
