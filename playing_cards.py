@@ -37,7 +37,7 @@ class Card:
 
     def use_card(self):
         # use the card (functionality specified per card subclass)
-        self.location = game.discard
+        self.location = game.discard_pile
 
     def move_card(self, destination):
         # moves the card to a new location
@@ -45,3 +45,20 @@ class Card:
         self.location = destination
         destination.add_card(self)
     
+class PolicyCard:
+    def __init__(self, card_id, display_name, card_ideology, location=None):
+        self.card_id = card_id
+        self.display_name = display_name
+        self.card_ideology = card_ideology
+        self.location = location
+    def __repr__(self):
+        # return display name & ideology
+        return f"{self.display_name} ({self.card_ideology})"
+    def get_location(self):
+        # returns where the card is located
+        return self.location
+    def move_card(self, destination):
+        # moves the card to a new location
+        self.location.remove_card(self)
+        self.location = destination
+        destination.add_card(self)

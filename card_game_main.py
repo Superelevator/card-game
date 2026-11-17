@@ -9,21 +9,24 @@ class Game:
         self.general_areas = general_areas
 
 class Player:
-    def __init__(self, player_id, name, hand, equipment_zone, religion_zone, policy_zone, judgement_zone):
+    def __init__(self, player_id, name, country, hand, equipment_zone, religion_zone, policy_zone, judgement_zone):
         self.player_id = player_id
         self.name = name
+        self.country = country
         self.hand = hand
         self.equipment_zone = equipment_zone
         self.religion_zone = religion_zone
         self.policy_zone = policy_zone
         self.judgement_zone = judgement_zone
 
-# initialize game
+# INITIALIZE GAME
+
+# players
 player_count = int(input("Enter the number of players: "))
 for player in player_count:
     # general information on player
     player_name = input(f"Please enter your name: ")
-    player_avatar = input(f"Enter avatar you'd like to use: ")
+    player_country = input(f"Enter country you'd like to use: ")
 
     # initialize player's information
 
@@ -51,4 +54,11 @@ for player in player_count:
     judgement_zone = areas.JudgementZone(f"judgement_zone_{player_name}", [], judgement_zone_slots, judgement_zone_slot_capacities)
 
     # initialize player
-    player = Player(player_name, hand, equipment_zone, religion_zone, policy_zone, judgement_zone)
+    player = Player(player_name, player_country, hand, equipment_zone, religion_zone, policy_zone, judgement_zone)
+
+# general areas
+discard_pile = areas.Area(f"discard_pile", [])
+deck = areas.Area(f"deck", [])
+policy_deck = areas.Area(f"policy_deck", [])
+
+# cards
