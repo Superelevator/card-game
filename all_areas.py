@@ -1,4 +1,4 @@
-from playing_cards import *
+import playing_cards as cards
 
 # A general area class, capable of storing cards & serves as the location of the card
 class Area:
@@ -20,7 +20,7 @@ class Area:
 
         
 
-    def add_card(self, card: Card, slot_type=None):
+    def add_card(self, card: cards.Card, slot_type=None):
         # adds a card to area (with consideration to slots)
         if slot_type is not None:
             if self.slot_available(slot_type):
@@ -33,7 +33,7 @@ class Area:
         self.cards.append(card)
         self.capacity += 1
 
-    def remove_card(self, card, slot_type=None):
+    def remove_card(self, card: cards.Card, slot_type=None):
         # removes a card from area
         if slot_type is not None:
             self.slots[slot_type].remove(card)
@@ -68,7 +68,7 @@ class Area:
         slot_id = self.slots.index(slot_type)
         return len(self.slots[slot_id]) < self.slot_capacities[slot_id]
 
-    def check_card_slot(self, card):
+    def check_card_slot(self, card: cards.Card):
         # checks which slot a card is in
         for slot in self.slots:
             if card in slot:
@@ -82,18 +82,17 @@ class Hand(Area):
 
 # AREA SUBCLASS - Player's Equipment Zone
 class EquipmentZone(Area):
-    def __init__(self, area_id, cards, weapon_slot, equipment_slot, terrain_slot, infrastructure_slot):
-        super().__init__(area_id, cards)
-        self.slots = ["weapon", "equipment", "terrain", "infrastructure"]
-        self.slot_capacities = [1, 1, 1, 1]
+    def __init__(self, area_id, cards, slots, slot_capacities):
+        super().__init__(area_id, cards, slots, slot_capacities)
+        # self.slots = ["weapon", "equipment", "terrain", "infrastructure"]
+        # self.slot_capacities = [1, 1, 1, 1]
     
 
 
 class ReligionZone(Area):
-    def __init__(self, area_id, cards, religion_slots):
-        super().__init__(area_id, cards)
-        self.slots = religion_slots
-        self.slot_capacities = [float('inf')] * len(religion_slots)
+    def __init__(self, area_id, cards, slots, slot_capacities):
+        super().__init__(area_id, cards, slots, slot_capacities)
+        
 
 
 
