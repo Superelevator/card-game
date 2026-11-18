@@ -1,0 +1,107 @@
+
+
+{
+    "game": "cs capstone project",
+    "edition": "beta deck",
+    "language": "English (official names used in the Legends of the Three Kingdoms / LTK English edition where applicable)",
+    "total_cards": 0,
+    "counts_by_card": {
+      "ATTACK!": 30,
+      "DODGE!": 15,
+      "Supplies": 8,
+      "Oil": 5,
+  
+      "Pillage": 6,
+      "Heist": 5,
+      "Bountiful Harvest": 4,
+      "Veto": 4,
+      "Legislate": 4,
+      "Total War": 3,
+      "Embargo": 3,
+      "Paralyze": 3,
+      "Aliens Invade": 3,
+      "Partition": 2,
+      "Trade": 2,
+      "Airstrike": 2,
+      "Infiltrate Weapons": 2,
+      "Plague": 1,
+      "Globalization": 1,
+      "Assassinate": 1,
+      "Spy": 1,
+  
+      "Machine Gun": 2,
+      "Katana": 1,
+      "Excalibur": 1,
+      "Greek Fire": 1,
+      "Trebuchet": 1,
+      "Battleship": 1,
+      "Fighter Jet": 1,
+      "Special Forces": 1,
+      "ICBM": 1,
+  
+      "Fortifications": 2,
+      "Bunkers": 1,
+      "Anti-air Missile Defense": 1,
+      "Main Battle Tank": 1,
+      "Trenches": 1,
+  
+      "Mountains": 1,
+      "Rainforest": 1,
+      "Tundra": 1,
+      
+      "Railroads": 1,
+      "Harbor": 1,
+      "Airport": 1
+    },
+    "categories": {
+      "basic": ["ATTACK!", "DODGE!", "Supplies", "Oil"],
+      "action_normal": [
+        "Pillage",
+        "Heist",
+        "Bountiful Harvest",
+        "Veto",
+        "Legislate",
+        "Total War",
+        "Embargo",
+        "Paralyze",
+        "Aliens Invade",
+        "Partition",
+        "Trade",
+        "Airstrike",
+        "Infiltrate Weapons",
+        "Plague",
+        "Globalization",
+        "Assassinate",
+        "Spy"
+      ],
+      "action_delayed": ["Embargo", "Paralyze"],
+      "equipment_weapon": [
+        "Machine Gun",
+        "Katana",
+        "Excalibur",
+        "Greek Fire",
+        "Trebuchet",
+        "Battleship",
+        "Fighter Jet",
+        "Special Forces",
+        "ICBM"
+      ],
+      "equipment_defenses": [
+        "Fortifications", 
+        "Bunkers",
+        "Anti-air Missile Defense",
+        "Main Battle Tank",
+        "Trenches"
+      ],
+      "equipment_terrain": [
+        "Mountains",
+        "Rainforest",
+        "Tundra"
+      ],
+      "equipment_infrastructure": [
+        "Railroads",
+        "Harbor",
+        "Airport"
+      ]
+    }
+  }
