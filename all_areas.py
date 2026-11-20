@@ -20,7 +20,7 @@ class Area:
 
         
 
-    def add_card(self, card: cards.Card, slot_type=None):
+    def add_card(self, card, slot_type=None):
         # adds a card to area (with consideration to slots)
         if slot_type is not None:
             if self.slot_available(slot_type):
@@ -33,7 +33,7 @@ class Area:
         self.cards.append(card)
         self.capacity += 1
 
-    def remove_card(self, card: cards.Card, slot_type=None):
+    def remove_card(self, card, slot_type=None):
         # removes a card from area
         if slot_type is not None:
             self.slots[slot_type].remove(card)
@@ -68,7 +68,7 @@ class Area:
         slot_id = self.slots.index(slot_type)
         return len(self.slots[slot_id]) < self.slot_capacities[slot_id]
 
-    def check_card_slot(self, card: cards.Card):
+    def check_card_slot(self, card):
         # checks which slot a card is in
         for slot in self.slots:
             if card in slot:
@@ -94,8 +94,14 @@ class ReligionZone(Area):
         super().__init__(area_id, cards, slots, slot_capacities)
         
 
+class PolicyZone(Area):
+    def __init__(self, area_id, cards, slots, slot_capacities):
+        super().__init__(area_id, cards, slots, slot_capacities)
 
 
+class JudgementZone(Area):
+    def __init__(self, area_id, cards, slots, slot_capacities):
+        super().__init__(area_id, cards, slots, slot_capacities)
 
 
 class PlayerZone:

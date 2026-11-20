@@ -1,0 +1,330 @@
+{
+    "ATTACK!": {
+        "name": "ATTACK!",
+        "id": "attack",
+        "description": "",
+        "class": "basic",
+        "type": "attack",
+        "count": 30
+    },
+    "DODGE!": {
+        "name": "DODGE!",
+        "id": "dodge",
+        "description": "",
+        "class": "basic",
+        "type": "dodge",
+        "count": 15
+    },
+    "Supplies": {
+        "name": "Supplies",
+        "id": "supplies",
+        "description": "",
+        "class": "basic",
+        "type": "supplies",
+        "count": 8
+    },
+    "Oil": {
+        "name": "Oil",
+        "id": "oil",
+        "description": "",
+        "class": "basic",
+        "type": "oil",
+        "count": 5
+    },
+    "Pillage": {
+        "name": "Pillage",
+        "id": "pillage",
+        "description": "Discard any non-policy card within a target's zone (Hand / Equipment, Religion, Judgement Zone).",
+        "class": "action_normal",
+        "type": "pillage",
+        "count": 6
+    },
+    "Heist": {
+        "name": "Heist",
+        "id": "heist",
+        "description": "Take a card from a player's equipment or hand (within a range of 1).",
+        "class": "action_normal",
+        "type": "heist",
+        "count": 5
+    },
+    "Bountiful Harvest": {
+        "name": "Bountiful Harvest",
+        "id": "bountiful_harvest",
+        "description": "The player may draw 2 cards.",
+        "class": "action_normal",
+        "type": "bountiful_harvest",
+        "count": 4
+    },
+    "Veto": {
+        "name": "Veto",
+        "id": "veto",
+        "description": "Deny the effects of any Action card. Both cards are then discarded.",
+        "class": "action_normal",
+        "type": "veto",
+        "count": 4
+    },
+    "Legislate": {
+        "name": "Legislate",
+        "id": "legislate",
+        "description": "Play this card to draw one policy card from the policy card deck.",
+        "class": "action_normal",
+        "type": "legislate",
+        "count": 4
+    },
+    "Total War": {
+        "name": "Total War",
+        "id": "total_war",
+        "description": "Choose a target player. The user of the card and the target player will take turns playing ATTACK! cards (starting with the targeted player) until one player voluntarily refuses to or is unable to play an ATTACK! card. This player loses 1 HP.",
+        "class": "action_normal",
+        "type": "total_war",
+        "count": 3
+    },
+    "Embargo": {
+        "name": "Embargo",
+        "id": "embargo",
+        "description": "Place this card in the judgement zone of the target. When this card is judged, if the judgement is not a card of the suit of clubs, the target may not draw any cards that turn.",
+        "class": "action_delayed",
+        "type": "embargo",
+        "count": 3
+    },
+    "Paralyze": {
+        "name": "Paralyze",
+        "id": "paralyze",
+        "description": "Place this card in the judgement zone of the target. When this card is judged, if the judgement is not a card of the suit of hearts, the target may not play any cards that turn.",
+        "class": "action_delayed",
+        "type": "paralyze",
+        "count": 3
+    },
+    "Aliens Invade": {
+        "name": "Aliens Invade",
+        "id": "aliens_invade",
+        "description": "All players except the user of this card must play an ATTACK! card in order of play following the user. Those who do not lose 1 HP.",
+        "class": "action_normal",
+        "type": "aliens_invade",
+        "count": 3
+    },
+    "Partition": {
+        "name": "Partition",
+        "id": "partition",
+        "description": "Draw an amount of cards corresponding to the remaining players. Starting with the user of the card, take turns taking one card from the drawn cards. ",
+        "class": "action_normal",
+        "type": "partition",
+        "count": 2
+    },
+    "Trade": {
+        "name": "Trade",
+        "id": "trade",
+        "description": "Upon using this card, the user discards this card and the target chooses one of their cards and gives it to the user. The user must also choose one of their cards to give to the target. Before these actions are performed however, the target has the option of also playing a trade card. If this occurs, both players may draw an additional card. ",
+        "class": "action_normal",
+        "type": "trade",
+        "count": 2
+    },
+    "Airstrike": {
+        "name": "Airstrike",
+        "id": "airstrike",
+        "description": "Upon playing this card, you may elect to use up to two other hand cards as ATTACK! cards against any targets you so choose. Note these cards will carry air damage and still reflect their suit.",
+        "class": "action_normal",
+        "type": "airstrike",
+        "count": 2
+    },
+    "Infiltrate Weapons": {
+        "name": "Infiltrate Weapons",
+        "id": "infiltrate_weapons",
+        "description": "This card must be played against a target with a weapon. The player may direct the target to attack another player; if the target is unwilling or unable to attack, they must forfeit their weapon to the player.",
+        "class": "action_normal",
+        "type": "infiltrate_weapons",
+        "count": 2
+    },
+    "Plague": {
+        "name": "Plague",
+        "id": "plague",
+        "description": "All players except the user of this card must play a DODGE! card in order of play following the user. Those who do not lose 1 HP.",
+        "class": "action_normal",
+        "type": "plague",
+        "count": 1
+    },
+    "Globalization": {
+        "name": "Globalization",
+        "id": "globalization",
+        "description": "All players gain 1 HP.",
+        "class": "action_normal",
+        "type": "globalization",
+        "count": 1
+    },
+    "Assassinate": {
+        "name": "Assassinate",
+        "id": "assassinate",
+        "description": "Draw a judgement card. If the card is black, the assassination is successful and the target player flips their card and may not play the following turn. They will lose their alignment until the beginning of their next turn. If the card is hearts, the opponent recovers 1 HP. Discard the card without effect otherwise.",
+        "class": "action_normal",
+        "type": "assassinate",
+        "count": 1
+    },
+    "Spy": {
+        "name": "Spy",
+        "id": "spy",
+        "description": "Place this card in the judgement zone of the target. When this card is judged, if the card's suit is not red, the target must reveal the two cards that they draw in their drawing phase to all players who have sent spies before taking them into their hand. This card will stay in the target's judgement zone until vetoed or a red card is drawn, in which case this card is discarded.",
+        "class": "action_normal",
+        "type": "spy",
+        "count": 1
+    },
+    "Machine Gun": {
+        "name": "Machine Gun",
+        "id": "machine_gun",
+        "description": "You may play an unbounded amount of ATTACK! cards while equipped.",
+        "class": "equipment_weapon",
+        "type": "machine_gun",
+        "count": 2
+    },
+    "Katana": {
+        "name": "Katana",
+        "id": "katana",
+        "description": "If the target takes damage from your ATTACK! card, draw a judgement card. If the card's suit is black, they must flip their card and forfeit their next turn.",
+        "class": "equipment_weapon",
+        "type": "katana",
+        "count": 1
+    },
+    "Excalibur": {
+        "name": "Excalibur",
+        "id": "excalibur",
+        "description": "Upon landing an ATTACK! card, draw a judgement card. If the suit is red,  the ATTACK! card deals +1 damage.",
+        "class": "equipment_weapon",
+        "type": "excalibur",
+        "count": 1
+    },
+    "Greek Fire": {
+        "name": "Greek Fire",
+        "id": "greek_fire",
+        "description": "If any of your ATTACK! cards land, the opponent must select a card from their zone to discard.",
+        "class": "equipment_weapon",
+        "type": "greek_fire",
+        "count": 1
+    },
+    "Trebuchet": {
+        "name": "Trebuchet",
+        "id": "trebuchet",
+        "description": "If you play an ATTACK! card against a defense that can block it, draw a judgement card. If the suit is red, your ATTACK! goes through anyway.",
+        "class": "equipment_weapon",
+        "type": "trebuchet",
+        "count": 1
+    },
+    "Battleship": {
+        "name": "Battleship",
+        "id": "battleship",
+        "description": "If any of your ATTACK! cards are dodged while you have this weapon equipped, they instantly move to your target's judgement zone and act as an embargo. This does not apply if there is already any embargo or embargo proxy in the target's judgement zone.",
+        "class": "equipment_weapon",
+        "type": "battleship",
+        "count": 1
+    },
+    "Fighter Jet": {
+        "name": "Fighter Jet",
+        "id": "fighter_jet",
+        "description": "All ATTACK! cards carry air damage.",
+        "class": "equipment_weapon",
+        "type": "fighter_jet",
+        "count": 1
+    },
+    "Special Forces": {
+        "name": "Special Forces",
+        "id": "special_forces",
+        "description": "All ATTACK! cards carry infiltration damage. You may choose when this is applicable, but forgoing infiltration damage will also cancel the range this weapon provides.",
+        "class": "equipment_weapon",
+        "type": "special_forces",
+        "count": 1
+    },
+    "ICBM": {
+        "name": "ICBM",
+        "id": "icbm",
+        "description": "You have the option of placing any ATTACK! card in your hand in front of you face up just beyond your equipment zone. If you manage to accumulate 3 ATTACK! cards in front of you, the next ATTACK! card you play will become nuclear and deal 3 base damage. If successful it will also remove all the player’s equipment and cards. It will also carry air damage, however, if faced with anti-air, draw a judgement card and the attack goes through if the judgement’s suit is not a heart. Ignore defenses otherwise. The weapon must be discarded afterward.",
+        "class": "equipment_weapon",
+        "type": "icbm",
+        "count": 1
+    },
+    "Fortifications": {
+        "name": "Fortifications",
+        "id": "fortifications",
+        "description": "All ATTACK! cards played against you undergo a judgement as soon as they are played. If the judgement reveals a red suit, you do not need to play a DODGE! card.",
+        "class": "equipment_defenses",
+        "type": "fortifications",
+        "count": 2
+    },
+    "Bunkers": {
+        "name": "Bunkers",
+        "id": "bunkers",
+        "description": "You are immune to ALL forms of damage unless it carries either air or infiltration damage. Any air damage you take gains +1 damage.",
+        "class": "equipment_defenses",
+        "type": "bunkers",
+        "count": 1
+    },
+    "Anti-air Missile Defense": {
+        "name": "Anti-air Missile Defense",
+        "id": "anti_air_missile_defense",
+        "description": "All damage that carries air damage and action cards that have air typings are ineffective against you. ",
+        "class": "equipment_defenses",
+        "type": "anti_air_missile_defense",
+        "count": 1
+    },
+    "Main Battle Tank": {
+        "name": "Main Battle Tank",
+        "id": "main_battle_tank",
+        "description": "Every time you play a DODGE! card in response to an ATTACK! card, you may immediately fire a tank round with the same effect as an ATTACK! card at any player in your attack range. This does not require an ATTACK! card, but may still be dodged.",
+        "class": "equipment_defenses",
+        "type": "main_battle_tank",
+        "count": 1
+    },
+    "Trenches": {
+        "name": "Trenches",
+        "id": "trenches",
+        "description": "If another player plays an ATTACK! card on you, it is counted as a total war scenario and they must play another ATTACK! card to start. Following this, both players must play ATTACK! cards in an alternating sequence. Whoever cannot or is not willing to play an ATTACK! card first takes the damage from the initial ATTACK! card.",
+        "class": "equipment_defenses",
+        "type": "trenches",
+        "count": 1
+    },
+    "Mountains": {
+        "name": "Mountains",
+        "id": "mountains",
+        "description": "+1 / All cards with you as a target are put into your judgement zone and are to be evaluated on your next turn. They are to be completed by the original player if the suit is not a spade.",
+        "class": "equipment_terrain",
+        "type": "mountains",
+        "count": 1
+    },
+    "Rainforest": {
+        "name": "Rainforest",
+        "id": "rainforest",
+        "description": "+1 / All damage dealing cards are to be judged immediately. If the suit is spades, the card may not be used and the original player of the card must play a DODGE! card or take one damage.",
+        "class": "equipment_terrain",
+        "type": "rainforest",
+        "count": 1
+    },
+    "Tundra": {
+        "name": "Tundra",
+        "id": "tundra",
+        "description": "+1 / Any ATTACK! cards played toward you must be accompanied by one other card to have effect.",
+        "class": "equipment_terrain",
+        "type": "tundra",
+        "count": 1
+    },
+    "Railroads": {
+        "name": "Railroads",
+        "id": "railroads",
+        "description": "-1 / You ignore enemy terrain.",
+        "class": "equipment_infrastructure",
+        "type": "railroads",
+        "count": 1
+    },
+    "Harbor": {
+        "name": "Harbor",
+        "id": "harbor",
+        "description": "-1 / You may play a trade action every turn (same effect as the trade action card).",
+        "class": "equipment_infrastructure",
+        "type": "harbor",
+        "count": 1
+    },
+    "Airport": {
+        "name": "Airport",
+        "id": "airport",
+        "description": "-2 / All other players gain -1 distance towards you.",
+        "class": "equipment_infrastructure",
+        "type": "airport",
+        "count": 1
+    }
+}
